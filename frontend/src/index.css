@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-primary: #14395C;
+  --color-navy-dark: #0F2A45;
+  --color-gold-accent: #F2B632;
+  --color-maroon-brand: #8B1E4B;
+  --color-pink-flash: #FBE9F0;
+  --color-bg-light: #F4F6FA;
+  --color-card-white: #FFFFFF;
+  --color-pill-bg: #E8F1FC;
+  --color-text-dark: #1F2937;
+  --color-text-muted: #6B7280;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --navy-primary: #14395C;
+  --navy-dark: #0F2A45;
+  --gold-accent: #F2B632;
+  --maroon-brand: #8B1E4B;
+  --pink-flash: #FBE9F0;
+  --bg-light: #F4F6FA;
+  --card-white: #FFFFFF;
+  --pill-bg: #E8F1FC;
+  --text-dark: #1F2937;
+  --text-muted: #6B7280;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c8d0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #14395C;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #FFFFFF !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card-print {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    break-inside: avoid;
+  }
+}
